@@ -1,0 +1,90 @@
+### index method - need JWT
+GET http://localhost:3000/api/enquiries
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM
+
+### creating an enquiry - Success - need JWT
+POST http://localhost:3000/api/enquiries
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzM0OTgsInN1YiI6MX0.he25u7MX2vO9tq-DwvRNPdBwzjEKVeKLOwkCFVipcCc
+
+{
+    "name":"test - create",
+    "contact": "0411123123",
+    "topic_id": 2,
+    "message":"message test"
+}
+
+### creating an enquiry - fail - need JWT
+POST http://localhost:3000/api/enquiries
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzM0OTgsInN1YiI6MX0.he25u7MX2vO9tq-DwvRNPdBwzjEKVeKLOwkCFVipcCc
+
+{
+    "name":"hi",
+    "contact": 1234,
+    "message":"hello"
+}
+
+### show method - success - need JWT
+GET http://localhost:3000/api/enquiries/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
+
+### show method - fail - - need JWT
+GET http://localhost:3000/api/enquiries/2000
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
+
+### update test 
+PUT http://localhost:3000/api/enquiries/2
+Content-Type: application/json
+
+{
+    "name":"test - update",
+    "contact": 123,
+    "topic_id": 2,
+    "message":"hello"
+}
+
+### Delete method
+DELETE http://localhost:3000/api/enquiries/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
+
+### Registarion method
+POST http://localhost:3000/api/auth/sign_up
+Content-Type: application/json
+
+{
+    "username": "username",
+    "first_name": "first",
+    "middle_name": "middle",
+    "last_name": "last", 
+    "email": "email",
+    "password": "password1",
+    "password_confirmation": "password1"
+}
+
+### Sign in
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{ 
+    "email": "test2",
+    "password": "password2"
+}
+
+### Sign in - incorrect details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{ 
+    "email": "test123",
+    "password": "passwo"
+}
+
+### get topics 
+GET http://localhost:3000/api/topics
+
+### get cakes
+GET http://localhost:3000/api/cakes
+
+### show cakes
+GET http://localhost:3000/api/cakes/1
