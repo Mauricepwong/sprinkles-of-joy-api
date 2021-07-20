@@ -42,9 +42,7 @@ def set_enquiry
     rescue 
         render json: {error: "Not found"} status: 404 
     end
-    
 end
-
 
 def enquiry_params
     params.require(:enquiry).permit(:name, :topic_id, :contact, :message)
