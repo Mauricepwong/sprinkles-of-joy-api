@@ -49,7 +49,7 @@ DELETE http://localhost:3000/api/enquiries/1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
 
 ### Registarion method
-POST http://localhost:3000/api/auth/sign_up
+POST http://localhost:3000/api/sign_up
 Content-Type: application/json
 
 {
@@ -62,8 +62,8 @@ Content-Type: application/json
     "password_confirmation": "password1"
 }
 
-### Sign in
-POST http://localhost:3000/api/auth/sign_in
+### Sign in user
+POST http://localhost:3000/api/sign_in
 Content-Type: application/json
 
 { 
@@ -71,14 +71,20 @@ Content-Type: application/json
     "password": "password2"
 }
 
-### Sign in - incorrect details
-POST http://localhost:3000/api/auth/sign_in
+### Sign in user - incorrect details
+POST http://localhost:3000/api/sign_in
 Content-Type: application/json
 
 { 
     "email": "test123",
     "password": "passwo"
 }
+
+### Update user details 
+
+
+### Delete user details 
+
 
 ### get topics 
 GET http://localhost:3000/api/topics
@@ -88,3 +94,4 @@ GET http://localhost:3000/api/cakes
 
 ### show cakes
 GET http://localhost:3000/api/cakes/1
+

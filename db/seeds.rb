@@ -5,9 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Topics = Topic.create([
-    { name: 'Booking' },
-    { name: 'Question' },
-    { name: 'Complaint' },
-    { name: 'Other' },
-])
+topics = ['Booking', 'Question', 'Complaint', 'Other']
+ 
+if Topic.all.length == 0
+    topics.each do |topic|
+        Topic.create(name: topic)
+    end
+end
+
+
+
