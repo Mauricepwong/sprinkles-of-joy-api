@@ -82,8 +82,11 @@ Content-Type: application/json
 
 ### Update user details 
 
-
 ### Delete user details 
+
+### Admin method - view all users 
+
+
 
 
 ### get topics 

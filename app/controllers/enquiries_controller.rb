@@ -45,7 +45,7 @@ class EnquiriesController < ApplicationController
         begin
             @enquiry = Enquiry.find(params[:id])
         rescue 
-            render json: {error: "Not found"} status: 404 
+            render json: {error: "Enquiry not found"} status: 404 
         end
     end
 
