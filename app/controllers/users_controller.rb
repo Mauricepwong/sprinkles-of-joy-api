@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authenticate_user, only: [:index, :update, :destroy]
-        
+
 
     def create
         @user = User.create(user_params)
@@ -26,13 +26,22 @@ class UsersController < ApplicationController
     # def update 
     # end
 
+    # def update 
+    #     @enquiry.update(enquiry_params)
+    #     if @enquiry.errors.any?
+    #         render json: @enquiry.errors, status: :unprocessable_entity
+    #     else
+    #         render json: @enquiry, status: 201 
+    #     end
+    # end
+
     # def delete
     # end 
 
-    def index
-        @user = user.all
-        render json: @enquiries
-    end
+    # def index
+    #     @user = user.all
+    #     render json: @enquiries
+    # end
 
     private 
     def user_params

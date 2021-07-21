@@ -1,5 +1,5 @@
 class EnquiriesController < ApplicationController
-    before_action :authenticate_user
+    before_action :authenticate_user, except: [:test]
     before_action :set_enquiry, only: [:show, :update, :destroy]
     before_action :check_ownership, only: [:update, :destroy]
 
@@ -36,6 +36,11 @@ class EnquiriesController < ApplicationController
     end
 
     def admin
+        @enquiries = Enquiry.all
+        render json: @enquiries
+    end
+
+    def test
         @enquiries = Enquiry.all
         render json: @enquiries
     end

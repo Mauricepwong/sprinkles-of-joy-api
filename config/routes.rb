@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   scope '/api' do
     get '/enquiries', to: 'enquiries#index'
     post '/enquiries', to: 'enquiries#create'
+    get '/enquiries/test', to: 'enquiries#test'
     get '/enquiries/:id', to: 'enquiries#show'
     put '/enquiries/:id', to: 'enquiries#update'
     delete '/enquiries/:id', to: 'enquiries#destroy'
+
 
     get '/cakes', to: 'cakes#index'
     get '/cakes/:id', to: 'cakes#show'
