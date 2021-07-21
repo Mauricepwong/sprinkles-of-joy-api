@@ -5,9 +5,11 @@ class Enquiry < ApplicationRecord
     def convert_enquiry
         return {
             user: self.user.username,
-            topic: self.category.name,
-            message: self.created_at,
+            name: self.name,
+            topic: self.topic.name,
+            message: self.message,
             posted: self.created_at,
             edited: self.updated_at
         }
+    end
 end

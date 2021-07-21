@@ -1,5 +1,5 @@
 class CakesController < ApplicationController
-    before_action :set_enquiry, only: [:show]
+    before_action :set_cake, only: [:show]
 
     def index
         @cakes = Cake.all
@@ -21,16 +21,16 @@ class CakesController < ApplicationController
 
     private 
 
-    def set_enquiry
+    def set_cake
         begin
-            @enquiry = Enquiry.find(params[:id])
+            @cake = Cake.find(params[:id])
         rescue 
-            render json: {error: "Not found"} status: 404 
+            render json: {error: "Cake not found"}, status: 404 
         end
     end
 
     def cake_params
-        params.require(:cake).permit(:name, :description, :ingredients, :picture)
+        params.require(:cake).permit(:name, :description, :ingredients, :image)
     end    
 
 end

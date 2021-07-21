@@ -15,7 +15,7 @@ end
 
 if User.all.length == 0 
     User.create(
-        name:  "test",
+        username:  "test",
         email: "test@test.com",
         password:              "password",
         password_confirmation: "password",
@@ -23,10 +23,19 @@ if User.all.length == 0
         middle_name: "middle",
         last_name: "last"
     )
+    User.create(
+        username:  "test2",
+        email: "test2@test2.com",
+        password:              "password",
+        password_confirmation: "password",
+        first_name: "first2",
+        middle_name: "middle2",
+        last_name: "last2"
+    )
 end
   
 if Enquiry.all.length == 0
-    Enquiry.create(user_is: 1, name: "Bob", contact: "0411111111", message: "this is a test message")
+    Enquiry.create(user_id: 1, name: "Bob", contact: "0411111111", topic_id: 1, message: "this is a test message")
 end
 
 if Cake.all.length == 0
@@ -34,8 +43,7 @@ if Cake.all.length == 0
         name: "Rainbow Cake",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-        picture: File.open(Rails.root.join('public', 'images', 'chocolate.jpg'))
-    )
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'rainbow.jpg')), filename: 'rainbow.jpg')
 end
 
 

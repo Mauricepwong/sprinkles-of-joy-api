@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user, only: [:index, :update, :destroy]
+        
+
     def create
         @user = User.create(user_params)
         
@@ -20,25 +23,19 @@ class UsersController < ApplicationController
         end
     end
 
-    def update 
-    end
+    # def update 
+    # end
 
-    def delete
-    end 
+    # def delete
+    # end 
 
     def index
         @user = user.all
         render json: @enquiries
     end
 
-    end
-
-    
-
     private 
     def user_params
         params.permit(:username, :email, :first_name, :last_name, :middle_name, :password, :password_confirmation )
     end
-
-
 end

@@ -1,10 +1,10 @@
 class EnquiriesController < ApplicationController
-    before_action :authenicate_user
-    before_action :set_comment, only: [:show, :update, :destroy]
+    before_action :authenticate_user
+    before_action :set_enquiry, only: [:show, :update, :destroy]
     before_action :check_ownership, only: [:update, :destroy]
 
     def index
-        @enquires = current_user.enquiries
+        @enquiries = current_user.enquiries
         render json: @enquiries
     end
 
@@ -36,7 +36,7 @@ class EnquiriesController < ApplicationController
     end
 
     def admin
-        @enquires = Enquiry.all
+        @enquiries = Enquiry.all
         render json: @enquiries
     end
 
@@ -45,12 +45,12 @@ class EnquiriesController < ApplicationController
         begin
             @enquiry = Enquiry.find(params[:id])
         rescue 
-            render json: {error: "Enquiry not found"} status: 404 
+            render json: {error: "Enquiry not found"}, status: 404 
         end
     end
 
     def check_ownership
-        if current_user.id != @enquiries.user.id 
+        if current_user.id != @enquiry.user.id
             render json: {error: "you dont have permission to perform this action"}, status:401 
         end
     end

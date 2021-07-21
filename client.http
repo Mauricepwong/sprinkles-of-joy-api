@@ -1,23 +1,23 @@
-### index method - need JWT
+### index method - current user enquiries
 GET http://localhost:3000/api/enquiries
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTY5NTMsInN1YiI6MX0.M_IN2WSXLVaJ4Wrc-47QtS175Bo_FQ6edjUFhNsRk9M
 
-### creating an enquiry - Success - need JWT
+### Creating an enquiry - Success 
 POST http://localhost:3000/api/enquiries
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzM0OTgsInN1YiI6MX0.he25u7MX2vO9tq-DwvRNPdBwzjEKVeKLOwkCFVipcCc
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTI0MDIsInN1YiI6MX0.RFDdsn087pgvKoYq1vZx8iPKWpN85WAvg9RhH-NQvws
 
 {
-    "name":"test - create",
+    "name":"Test3",
     "contact": "0411123123",
-    "topic_id": 2,
+    "topic_id": 3,
     "message":"message test"
 }
 
-### creating an enquiry - fail - need JWT
+### Creating an enquiry - fail 
 POST http://localhost:3000/api/enquiries
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzM0OTgsInN1YiI6MX0.he25u7MX2vO9tq-DwvRNPdBwzjEKVeKLOwkCFVipcCc
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
 
 {
     "name":"hi",
@@ -25,31 +25,32 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY0MzM0O
     "message":"hello"
 }
 
-### show method - success - need JWT
+### Show enquiry - success 
 GET http://localhost:3000/api/enquiries/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
 
-### show method - fail - - need JWT
+### Show enquiry - fail 
 GET http://localhost:3000/api/enquiries/2000
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
 
-### update test 
-PUT http://localhost:3000/api/enquiries/2
+### Update enquiry
+PUT http://localhost:3000/api/enquiries/1
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTc2OTMsInN1YiI6MX0.20YATHVzO6uaJhy7cVRyjbV1L4H-xN_4Bjx0hojNuV8
 
 {
-    "name":"test - update",
-    "contact": 123,
+    "name":"bob-update",
+    "contact": "1235",
     "topic_id": 2,
-    "message":"hello"
+    "message":"this is a test message 2"
 }
 
 ### Delete method
-DELETE http://localhost:3000/api/enquiries/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY3ODM0OTMsInN1YiI6Mn0.hJpMVb-FCYLsH9nbKFi9jOv5vFuadMInAI4UKJlp1cM.eyJleHAiOjE2MjY0Mzc1MzYsInN1YiI6Mn0.pVNgC5kW-WH3XqyFU_yKdU6UJy7YtHxI5_fR6cgCKuQ
+DELETE http://localhost:3000/api/enquiries/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTc2OTMsInN1YiI6MX0.20YATHVzO6uaJhy7cVRyjbV1L4H-xN_4Bjx0hojNuV8
 
 ### Registarion method
-POST http://localhost:3000/api/sign_up
+POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
@@ -63,16 +64,16 @@ Content-Type: application/json
 }
 
 ### Sign in user
-POST http://localhost:3000/api/sign_in
+POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 { 
-    "email": "test2",
-    "password": "password2"
+    "email": "test@test.com",
+    "password": "password"
 }
 
 ### Sign in user - incorrect details
-POST http://localhost:3000/api/sign_in
+POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
 
 { 
@@ -85,8 +86,6 @@ Content-Type: application/json
 ### Delete user details 
 
 ### Admin method - view all users 
-
-
 
 
 ### get topics 
