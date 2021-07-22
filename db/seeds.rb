@@ -35,7 +35,10 @@ if User.all.length == 0
 end
   
 if Enquiry.all.length == 0
-    Enquiry.create(user_id: 1, name: "Bob", contact: "0411111111", topic_id: 1, message: "this is a test message")
+    Enquiry.create(user_id: 1, name: "Enquiry1-1", contact: "0411111111", topic_id: 1, message: "User 1 - this is a test message")
+    Enquiry.create(user_id: 1, name: "Enquiry1-2", contact: "0411111111", topic_id: 2, message: "User 1 - this is a test message")
+    Enquiry.create(user_id: 2, name: "Enquiry2-1", contact: "0411111111", topic_id: 3, message: "User 2 - this is a test message")
+    Enquiry.create(user_id: 2, name: "Enquiry2-1", contact: "0411111111", topic_id: 4, message: "User 2 - this is a test message")
 end
 
 if Cake.all.length == 0
@@ -44,6 +47,32 @@ if Cake.all.length == 0
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'rainbow.jpg')), filename: 'rainbow.jpg')
+    Cake.create(
+        name: "Chocolate Cake",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'chocolate.jpg')), filename: 'chocolate.jpg')
+    Cake.create(
+        name: "Cupcakes",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'cupcakes.jpg')), filename: 'cupcakes.jpg')
+    Cake.create(
+        name: "Vanilla Cake",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'vanilla.jpg')), filename: 'vanilla.jpg')
+    Cake.create(
+        name: "Velvet Cake",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'velvet.jpg')), filename: 'velvet.jpg')
+    Cake.create(
+        name: "Donuts",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'donut.jpg')), filename: 'donut.jpg')
+
 end
 
 
