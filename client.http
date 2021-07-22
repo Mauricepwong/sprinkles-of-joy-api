@@ -17,11 +17,12 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTI0M
 ### Creating an enquiry - fail 
 POST http://localhost:3000/api/enquiries
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMTQ4NDMsInN1YiI6MX0.jxv8kLaIePmp2o7wqTfxxOvFch1GPJDZer1uZ40Oeuw
 
 {
     "name":"hi",
     "contact": 1234,
+    "topic_id": 3,
     "message":"hello"
 }
 
@@ -94,6 +95,102 @@ GET http://localhost:3000/api/topics
 ### get cakes
 GET http://localhost:3000/api/cakes
 
-### show cakes
+### show cake
 GET http://localhost:3000/api/cakes/1
+
+## LIVE SITE HTTP REQUESTS 
+
+### Sign in user
+POST https://sprinkles-of-joy-api.herokuapp.com/api/auth/sign_in
+Content-Type: application/json
+
+{ 
+    "email": "test@test.com",
+    "password": "password"
+}
+
+### Sign in user - incorrect details
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{ 
+    "email": "test123",
+    "password": "passwo"
+}
+
+### Registarion method
+POST https://sprinkles-of-joy-api.herokuapp.com/api/auth/sign_up
+Content-Type: application/json
+
+{
+    "username": "username",
+    "first_name": "first",
+    "middle_name": "middle",
+    "last_name": "last", 
+    "email": "email",
+    "password": "password1",
+    "password_confirmation": "password1"
+}
+
+### get topics 
+GET https://sprinkles-of-joy-api.herokuapp.com/api/topics
+
+### get cakes
+GET https://sprinkles-of-joy-api.herokuapp.com/api/cakes
+
+### show cake
+GET https://sprinkles-of-joy-api.herokuapp.com/api/cakes/1
+
+### Index method - show all current user enquiries
+GET https://sprinkles-of-joy-api.herokuapp.com/api/enquiries
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTY5NTMsInN1YiI6MX0.M_IN2WSXLVaJ4Wrc-47QtS175Bo_FQ6edjUFhNsRk9M
+
+### Creating an enquiry - Success 
+POST https://sprinkles-of-joy-api.herokuapp.com/api/enquiries
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTI0MDIsInN1YiI6MX0.RFDdsn087pgvKoYq1vZx8iPKWpN85WAvg9RhH-NQvws
+
+{
+    "name":"Test3",
+    "contact": "0411123123",
+    "topic_id": 3,
+    "message":"message test"
+}
+
+### Creating an enquiry - fail 
+POST https://sprinkles-of-joy-api.herokuapp.com/api/enquiries
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
+
+{
+    "name":"hi",
+    "contact": 1234,
+    "message":"hello"
+}
+
+### Show enquiry - success 
+GET https://sprinkles-of-joy-api.herokuapp.com/api/enquiries/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
+
+### Show enquiry - fail 
+GET https://sprinkles-of-joy-api.herokuapp.com/api/enquiries/2000
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY4ODQyNTMsInN1YiI6MX0.ktkruy4A40A31CkrGFCjcAuIdS3nGK59V7NztiO_o2A
+
+### Delete method
+DELETE https://sprinkles-of-joy-api.herokuapp.com/api/enquiries/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTc2OTMsInN1YiI6MX0.20YATHVzO6uaJhy7cVRyjbV1L4H-xN_4Bjx0hojNuV8
+
+### Update enquiry
+PUT https://sprinkles-of-joy-api.herokuapp.com/api/enquiries/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTc2OTMsInN1YiI6MX0.20YATHVzO6uaJhy7cVRyjbV1L4H-xN_4Bjx0hojNuV8
+
+{
+    "name":"bob-update",
+    "contact": "1235",
+    "topic_id": 2,
+    "message":"this is a test message 2"
+}
+
+
 
