@@ -1,6 +1,6 @@
 ### index method - current user enquiries
 GET http://localhost:3000/api/enquiries
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5MTY5NTMsInN1YiI6MX0.M_IN2WSXLVaJ4Wrc-47QtS175Bo_FQ6edjUFhNsRk9M
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwMjk3OTIsInN1YiI6M30.aDu-lB7XViA8b2HqOmy14vTr53kM5_fd6jA4EVhtgbE
 
 ### Creating an enquiry - Success 
 POST http://localhost:3000/api/enquiries
@@ -73,6 +73,15 @@ Content-Type: application/json
     "password": "password"
 }
 
+### Sign in user
+POST http://localhost:3000/api/auth/sign_in
+Content-Type: application/json
+
+{ 
+    "email": "adminadmin.com",
+    "password": "password"
+}
+
 ### Sign in user - incorrect details
 POST http://localhost:3000/api/auth/sign_in
 Content-Type: application/json
@@ -110,7 +119,7 @@ Content-Type: application/json
 }
 
 ### Sign in user - incorrect details
-POST http://localhost:3000/api/auth/sign_in
+POST https://sprinkles-of-joy-api.herokuapp.com/api/auth/sign_in
 Content-Type: application/json
 
 { 

@@ -32,6 +32,16 @@ if User.all.length == 0
         middle_name: "middle2",
         last_name: "last2"
     )
+    User.create(
+        username:  "admin",
+        email: "admin@admin.com",
+        password:              "password",
+        password_confirmation: "password",
+        first_name: "first2",
+        middle_name: "middle2",
+        last_name: "last2",
+        admin: true 
+    )
 end
   
 if Enquiry.all.length == 0
@@ -71,7 +81,7 @@ if Cake.all.length == 0
         name: "Donuts",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'donut.jpg')), filename: 'donut.jpg')
+    ).image.attach(io: File.open(Rails.root.join('public', 'images', 'donuts.jpg')), filename: 'donuts.jpg')
 
 end
 

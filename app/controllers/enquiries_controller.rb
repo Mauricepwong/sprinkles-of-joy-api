@@ -1,11 +1,16 @@
 class EnquiriesController < ApplicationController
-    before_action :authenticate_user, except: [:test]
+    before_action :authenticate_user
     before_action :set_enquiry, only: [:show, :update, :destroy]
-    before_action :check_ownership, only: [:update, :destroy]
+    before_action :check_ownership, only: [:show, :update, :destroy]
 
     def index
-        @enquiries = current_user.enquiries
-        render json: @enquiries
+        if current_user.admin?
+            @enquiries = Enquiry.all
+            render json: @enquiries
+        else
+            @enquiries = current_user.enquiries
+            render json: @enquiries
+        end
     end
 
     def create
@@ -35,16 +40,6 @@ class EnquiriesController < ApplicationController
         render json: 204
     end
 
-    def admin
-        @enquiries = Enquiry.all
-        render json: @enquiries
-    end
-
-    def test
-        @enquiries = Enquiry.all
-        render json: @enquiries
-    end
-
     private
     def set_enquiry
         begin
@@ -55,7 +50,7 @@ class EnquiriesController < ApplicationController
     end
 
     def check_ownership
-        if current_user.id != @enquiry.user.id
+        if (current_user.id != @enquiry.user.id) || (current_user.admin == false) 
             render json: {error: "you dont have permission to perform this action"}, status:401 
         end
     end

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   scope '/api' do
     get '/enquiries', to: 'enquiries#index'
     post '/enquiries', to: 'enquiries#create'
-    get '/enquiries/test', to: 'enquiries#test'
     get '/enquiries/:id', to: 'enquiries#show'
     put '/enquiries/:id', to: 'enquiries#update'
     delete '/enquiries/:id', to: 'enquiries#destroy'
@@ -15,9 +14,9 @@ Rails.application.routes.draw do
     scope '/auth' do
       post '/sign_up', to: 'users#create'
       post '/sign_in', to: 'users#sign_in'
-      put '/update/:id', to: 'user#update'
-      delete '/delete/:id', to: 'user#destroy'
-      get '/users', to: 'users#index'
+      put '/update/:id', to: 'users#update'
+      delete '/delete/:id', to: 'users#destroy'
+      get '/user', to: 'users#show'
     end
   end
 end
