@@ -50,7 +50,8 @@ class EnquiriesController < ApplicationController
     end
 
     def check_ownership
-        if (current_user.id != @enquiry.user.id) || (current_user.admin == false) 
+        if (current_user.id != @enquiry.user.id) && (current_user.admin == false)
+            
             render json: {error: "you dont have permission to perform this action"}, status:401 
         end
     end

@@ -11,6 +11,7 @@ if Topic.all.length == 0
     topics.each do |topic|
         Topic.create(name: topic)
     end
+    puts "4 topics created"
 end
 
 if User.all.length == 0 
@@ -42,6 +43,7 @@ if User.all.length == 0
         last_name: "last2",
         admin: true 
     )
+    puts "3 users created"
 end
   
 if Enquiry.all.length == 0
@@ -49,6 +51,7 @@ if Enquiry.all.length == 0
     Enquiry.create(user_id: 1, name: "Enquiry1-2", contact: "0411111111", topic_id: 2, message: "User 1 - this is a test message")
     Enquiry.create(user_id: 2, name: "Enquiry2-1", contact: "0411111111", topic_id: 3, message: "User 2 - this is a test message")
     Enquiry.create(user_id: 2, name: "Enquiry2-1", contact: "0411111111", topic_id: 4, message: "User 2 - this is a test message")
+    puts "4 enquiries created"
 end
 
 if Cake.all.length == 0
@@ -82,7 +85,7 @@ if Cake.all.length == 0
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'donuts.jpg')), filename: 'donuts.jpg')
-
+    puts "6 cakes created"
 end
 
 

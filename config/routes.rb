@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       post '/sign_in', to: 'users#sign_in'
       put '/update/:id', to: 'users#update'
       delete '/delete/:id', to: 'users#destroy'
-      get '/user', to: 'users#show'
+      get '/user/:id', to: 'users#show'
     end
   end
 end

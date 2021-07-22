@@ -1,11 +1,11 @@
 class UsersController < ApplicationController 
     before_action :authenticate_user, only: [:show, :update, :destroy]
     before_action :set_user, only: [:show, :update, :destroy] 
-    before_action :check_ownership, only: [:update, :destroy]
+    before_action :check_ownership, only: [:show, :update, :destroy]
 
     def create
         @user = User.create(user_params)
-        
+        puts "hello"
         if @user.save
             auth_token = Knock::AuthToken.new payload: {sub:@user.id}
             render json: { username: @user.username, jwt: auth_token.token }, status: 201
@@ -25,9 +25,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        if current_user.admin?
-            @users = User.all
-            render json: @users
+        if current_user.admin == true
+            render json: User.all
         else
             render json: @user
         end
@@ -38,18 +37,18 @@ class UsersController < ApplicationController
         if @user.errors.any?
             render json: @user.errors, status: :unprocessable_entity
         else
-            render json: @enquiry, status: 201 
+            render json: @user, status: 201 
         end
     end
 
     def destroy 
-        @user.delete
+        @user.destroy
         render json: 204
     end
 
     private 
     def user_params
-        params.permit(:username, :email, :first_name, :last_name, :middle_name, :password, :password_confirmation )
+        params.require(:user).permit(:username, :email, :first_name, :last_name, :middle_name, :password, :password_confirmation )
     end
 
     def set_user
@@ -61,7 +60,7 @@ class UsersController < ApplicationController
     end
 
     def check_ownership
-        if (current_user.id != @user.id) || (current_user.admin == false) 
+        if (current_user.id != @user.id) && (current_user.admin == false) 
             render json: {error: "you dont have permission to perform this action"}, status:401 
         end
     end
