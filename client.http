@@ -40,7 +40,8 @@ Content-Type: application/json
     "last_name": "last", 
     "email": "email3@email.com",
     "password": "password1",
-    "password_confirmation": "password1"
+    "password_confirmation": "password1",
+    "admin": "false"
 }
 
 ### Registarion method -fail (taken & wrong password) 
@@ -192,7 +193,8 @@ Content-Type: application/json
     "last_name": "last", 
     "email": "email2@email.com",
     "password": "123",
-    "password_confirmation": "123"
+    "password_confirmation": "123",
+    "admin": "false"
 }
 
 ### Registarion method -fail (taken & wrong password) 
