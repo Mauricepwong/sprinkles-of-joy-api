@@ -1,5 +1,6 @@
 
 ## LIVE SITE HTTP REQUESTS 
+## Sign in or Sign up to obtain JWT for any logged in methods
 
 ### Sign in user
 POST https://sprinkles-of-joy-api.herokuapp.com/api/auth/sign_in
@@ -182,7 +183,7 @@ Content-Type: application/json
     "password": "passwo"
 }
 
-### Registarion method
+### Registarion method - trying to amend this but admin needs to be added
 POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
@@ -197,7 +198,7 @@ Content-Type: application/json
     "admin": "false"
 }
 
-### Registarion method -fail (taken & wrong password) 
+### Registarion method -fail (taken & wrong password) - trying to amend this but admin needs to be added
 POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
@@ -208,7 +209,8 @@ Content-Type: application/json
     "last_name": "last", 
     "email": "email@email.com",
     "password": "password1",
-    "password_confirmation": "password"
+    "password_confirmation": "password",
+    "admin": "false"
 }
 
 ### get topics 
@@ -273,8 +275,8 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyM
 ### USER METHODS
 
 ### User show  - profile or admin(all users)
-GET http://localhost:3000/api/auth/user/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyNDgsInN1YiI6Mn0.Pypl7yQ2HplphI0DRau4SWFvbJl33CDu3LHHbJxHXQ4
+GET http://localhost:3000/api/auth/user/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNTYzMDUsInN1YiI6M30.gfonsfXF899rfjbvFAT2TIQ-NLHnYoOPGb8uUOHOyUU
 
 ### User update
 PUT  http://localhost:3000/api/auth/update/2
