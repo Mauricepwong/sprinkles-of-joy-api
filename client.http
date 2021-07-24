@@ -188,14 +188,13 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "username1",
+    "username": "username",
     "first_name": "first",
     "middle_name": "middle",
     "last_name": "last", 
-    "email": "email2@email.com",
-    "password": "123",
-    "password_confirmation": "123",
-    "admin": "false"
+    "email": "email@email.com",
+    "password": "password",
+    "password_confirmation": "password"
 }
 
 ### Registarion method -fail (taken & wrong password) - trying to amend this but admin needs to be added
@@ -229,7 +228,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyN
 ### Creating an enquiry - Success 
 POST http://localhost:3000/api/enquiries
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyMTIsInN1YiI6MX0.QOpPbjOZ6jwxsbFqrYmKAUBcjid_FN6TaxpWD7kUElM
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
 
 {
     "name":"Test3",
@@ -241,7 +240,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyM
 ### Creating an enquiry - fail 
 POST http://localhost:3000/api/enquiries
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyMTIsInN1YiI6MX0.QOpPbjOZ6jwxsbFqrYmKAUBcjid_FN6TaxpWD7kUElM
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
 
 {
     "name":"hi",
@@ -251,15 +250,16 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyM
 
 ### Show enquiry - success 
 GET http://localhost:3000/api/enquiries/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyNDgsInN1YiI6Mn0.Pypl7yQ2HplphI0DRau4SWFvbJl33CDu3LHHbJxHXQ4
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
+
 ### Show enquiry - fail 
 GET http://localhost:3000/api/enquiries/2000
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyNDgsInN1YiI6Mn0.Pypl7yQ2HplphI0DRau4SWFvbJl33CDu3LHHbJxHXQ4
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
 
 ### Update enquiry
 PUT http://localhost:3000/api/enquiries/1
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyMTIsInN1YiI6MX0.QOpPbjOZ6jwxsbFqrYmKAUBcjid_FN6TaxpWD7kUElM
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
 
 {
     "name":"bob-update",
@@ -269,14 +269,14 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyM
 }
 
 ### Delete method
-DELETE http://localhost:3000/api/enquiries/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyMTIsInN1YiI6MX0.QOpPbjOZ6jwxsbFqrYmKAUBcjid_FN6TaxpWD7kUElM
+DELETE http://localhost:3000/api/enquiries/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
 
 ### USER METHODS
 
 ### User show  - profile or admin(all users)
 GET http://localhost:3000/api/auth/user/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNTYzMDUsInN1YiI6M30.gfonsfXF899rfjbvFAT2TIQ-NLHnYoOPGb8uUOHOyUU
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
 
 ### User update
 PUT  http://localhost:3000/api/auth/update/2
@@ -294,5 +294,5 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyN
 }
 
 ### User delete
-DELETE http://localhost:3000/api/auth/delete/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyMTIsInN1YiI6MX0.QOpPbjOZ6jwxsbFqrYmKAUBcjid_FN6TaxpWD7kUElM
+DELETE http://localhost:3000/api/auth/delete/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU

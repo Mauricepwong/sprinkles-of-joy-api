@@ -1,7 +1,7 @@
 class CakeSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
   
-  attributes :id, :name, :description, :ingredients, :image
+  attributes :id, :name, :description, :ingredients, :price, :image
 
   def image
     object.image.url.sub(/\?.*/, '') 

@@ -3,9 +3,10 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy] 
     before_action :check_ownership, only: [:show, :update, :destroy]
 
+    wrap_parameters :user, include: [ :username, :email, :first_name, :last_name, :middle_name, :password, :password_confirmation ]
+
     def create
         @user = User.create(user_params)
-        puts "hello"
         if @user.save
             auth_token = Knock::AuthToken.new payload: {sub:@user.id}
             render json: { username: @user.username, jwt: auth_token.token }, status: 201
@@ -43,12 +44,12 @@ class UsersController < ApplicationController
 
     def destroy 
         @user.destroy
-        render json: 204
+        render json: {message: "User deleted"}
     end
 
     private 
     def user_params
-        params.require(:user).permit(:username, :email, :first_name, :last_name, :middle_name, :password, :password_confirmation )
+        params.require(:user).permit(:username, :email, :first_name, :last_name, :middle_name, :password, :password_confirmation, :admin )
     end
 
     def set_user

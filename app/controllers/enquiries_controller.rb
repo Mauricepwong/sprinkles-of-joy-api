@@ -23,7 +23,7 @@ class EnquiriesController < ApplicationController
     end
 
     def show
-        render json: @enquiry.convert_enquiry
+        render json: @enquiry
     end
 
     def update 
@@ -37,7 +37,7 @@ class EnquiriesController < ApplicationController
 
     def destroy 
         @enquiry.delete
-        render json: 204
+        render json: {message: "Enquiry deleted"}
     end
 
     private

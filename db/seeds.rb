@@ -59,31 +59,37 @@ if Cake.all.length == 0
         name: "Rainbow Cake",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        price: 70.00
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'rainbow.jpg')), filename: 'rainbow.jpg')
     Cake.create(
         name: "Chocolate Cake",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        price: 60.00
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'chocolate.jpg')), filename: 'chocolate.jpg')
     Cake.create(
         name: "Cupcakes",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        price: 30.00
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'cupcakes.jpg')), filename: 'cupcakes.jpg')
     Cake.create(
         name: "Vanilla Cake",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        price: 50.00
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'vanilla.jpg')), filename: 'vanilla.jpg')
     Cake.create(
         name: "Velvet Cake",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        price: 60.00
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'velvet.jpg')), filename: 'velvet.jpg')
     Cake.create(
         name: "Donuts",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
         ingredients: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        price: 35.00
     ).image.attach(io: File.open(Rails.root.join('public', 'images', 'donuts.jpg')), filename: 'donuts.jpg')
     puts "6 cakes created"
 end
