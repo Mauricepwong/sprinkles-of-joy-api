@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
     get '/cakes', to: 'cakes#index'
     get '/cakes/:id', to: 'cakes#show'
+    post '/cakes', to: 'cakes#create'
+    put '/cakes/:id', to: 'cakes#update'
+    delete '/cakes/:id', to: 'cakes#destroy'
+
     get '/topics', to: 'topics#index'
     scope '/auth' do
       post '/sign_up', to: 'users#create'

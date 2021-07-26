@@ -4,18 +4,9 @@ class CakeSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :ingredients, :price, :image
 
   def image
-    object.image.url.sub(/\?.*/, '') 
+    if object.image.attached?
+      object.image.url.sub(/\?.*/, '') 
+    end
   end
-  #   return unless object.image.attached?
-
-  #   object.image.blob.attributes
-  #         .slice('filename', 'byte_size')
-  #         .merge(url: image_url)
-  #         .tap { |attrs| attrs['name'] = attrs.delete('filename') }
-  # end
-
-  # def image_url
-  #   rails_blob_url(object.image, only_path: true) 
-  # end
 end
 

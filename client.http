@@ -35,18 +35,17 @@ POST https://sprinkles-of-joy-api.herokuapp.com/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "username2",
+    "username": "usernam",
     "first_name": "first",
     "middle_name": "middle",
     "last_name": "last", 
-    "email": "email3@email.com",
-    "password": "password1",
-    "password_confirmation": "password1",
-    "admin": "false"
+    "email": "ema4@email.com",
+    "password": "password134",
+    "password_confirmation": "password134"
 }
 
 ### Registarion method -fail (taken & wrong password) 
-POST https://sprinkles-of-joy-api.herokuapp.com/api/auth/sign_up
+POST https://sprinkles-of-joy-api.herokuapp.com/api/
 Content-Type: application/json
 
 {
@@ -188,11 +187,11 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "username",
+    "username": "user2name",
     "first_name": "first",
     "middle_name": "middle",
     "last_name": "last", 
-    "email": "email@email.com",
+    "email": "emawil2@email.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -202,13 +201,13 @@ POST http://localhost:3000/api/auth/sign_up
 Content-Type: application/json
 
 {
-    "username": "username",
-    "first_name": "first",
+    "username": "usernam1234e",
+    "first_name": "firs34t",
     "middle_name": "middle",
     "last_name": "last", 
-    "email": "email@email.com",
+    "email": "email231434@email.com",
     "password": "password1",
-    "password_confirmation": "password",
+    "password_confirmation": "password1",
     "admin": "false"
 }
 
@@ -296,3 +295,21 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyN
 ### User delete
 DELETE http://localhost:3000/api/auth/delete/2
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
+
+### ADMIN METHODS -------------------------------------
+
+### Show all enquiries
+GET http://localhost:3000/api/enquiries
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcwNDYyNDgsInN1YiI6Mn0.Pypl7yQ2HplphI0DRau4SWFvbJl33CDu3LHHbJxHXQ4
+
+### Show all users
+GET http://localhost:3000/api/auth/user/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcxODM0NTIsInN1YiI6M30.bB79Nk1m_bB9U92C9pE3MftRnlM5z0eLLuIJyM_x4FU
+
+### Create a new cake
+
+### Update a cake
+
+### Delete a cake 
+DELETE http://localhost:3000/api/cakes/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjcyMDMxMzAsInN1YiI6M30.NdhERSDdUK4w6AtUDsk1JrI1-fFJI8E-6lQvGHWWt9k
